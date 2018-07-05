@@ -19,7 +19,9 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "@/assets/css/_benchmark.scss";
+body {
+  background: #efefef;
+}
 </style>
 <style>
 .bounce-enter-active {
