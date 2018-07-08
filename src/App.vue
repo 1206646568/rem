@@ -11,9 +11,9 @@
 export default {
   name: 'App',
   created () {
-    console.log(this.$axios)
-    console.log(this.$moment)
-    console.log(this.$_)
+    // console.log(this.$axios)
+    // console.log(this.$moment)
+    // console.log(this.$_)
     // console.log(this.$_)
   }
 }
