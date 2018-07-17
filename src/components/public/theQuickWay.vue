@@ -1,24 +1,23 @@
 <template>
-  <div>
+  <div class="flexbox">
     <header class="header">
-      <!--头部-->
-      <div>
+      <a class="all">
         <i class="iconfont icon-all"></i>
-      </div>
+      </a>
       首页
     </header>
-    <router-view></router-view>
+    <router-view class="main"></router-view>
     <nav class="navList">
       <a>
         <i class="iconfont icon-hot"></i>
         <span>热门</span>
       </a>
       <a>
-        <i class="iconfont icon-category"></i>
+        <i class="iconfont icon-form"></i>
         <span>文章</span>
       </a>
       <a>
-        <i class="iconfont icon-form"></i>
+        <i class="iconfont icon-category"></i>
         <span>分类</span>
       </a>
       <a>
@@ -32,60 +31,51 @@
 @import "@/assets/css/_benchmark.scss";
 $initBgColor: #4a8bce;
 $initColor: #4e4b4b;
+.flexbox {
+  height: 100%;
+  // display: 设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。
+  display: flex;
+  // flex-direction: row | row-reverse | column | column-reverse; 默认(水平方向)、水平方向（右起点）、垂直方向（上起点）、垂直方向（下起点）
+  flex-direction: column;
+  font-size: px2rem(16px);
+}
 .header {
-  font-size: px2rem(22px);
+  position: relative;
   height: px2rem(60px);
   line-height: px2rem(60px);
-  background: $initBgColor;
   text-align: center;
+  background: $initBgColor;
+  font-size: px2rem(20px);
   color: #fff;
-  position: relative;
-  & :nth-child(1) {
-    height: px2rem(60px);
-    width: px2rem(50px);
-    display: inline-block;
+  .all {
     position: absolute;
-    left: 0px;
+    width: px2rem(60px);
+    display: block;
     i {
       font-size: px2rem(16px);
     }
   }
-  // & :nth-child(2){
-  //   display:inline-block;
-  //   text-align:center;
-  //   width:px2rem(320px);
-  //   float:left;
-  // }
 }
-
+.main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow-y: scroll;
+}
 .navList {
-  // width: px2rem(375px);
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: #fff;
-  text-align: center;
-  // height: px2rem(60px);
-  // line-height: px2rem(60px);
-  // font-weight: bold;
-  border-top: px2rem(1px) solid #cdcdcd;
-  // border-top-left-radius: 45%;
-  // border-top-right-radius: 45%;
   background: $initBgColor;
-  overflow: hidden;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-around;
+  height: px2rem(60px);
+  line-height: px2rem(60px);
   a {
-    display: inline-block;
     width: 25%;
-    float: left;
-    color: #fff;
-    i {
-      font-size: px2rem(16px);
-    }
-    span{
-      font-size: px2rem(12px);
-      display:block;
-    }
-
+  }
+  i {
+    font-size: px2rem(16px);
   }
 }
 </style>
