@@ -62,20 +62,31 @@ $initColor: #4e4b4b;
   flex-direction: column;
   overflow-y: scroll;
 }
+// main::-webkit-scrollbar {
+//   display: none;
+//   width: 0px;
+// }
 .navList {
-  background: $initBgColor;
-  color: #fff;
   display: flex;
   flex-direction: row;
   text-align: center;
-  justify-content: space-around;
+  background: $initBgColor;
+  color: #fff;
   height: px2rem(60px);
-  line-height: px2rem(60px);
-  a {
-    width: 25%;
-  }
-  i {
-    font-size: px2rem(16px);
+  // line-height: px2rem(60px);
+  & > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1px;
+    i {
+      font-size: px2rem(20px);
+    }
+    span {
+      margin-top: px2rem(3px);
+      font-size: px2rem(12px);
+    }
   }
 }
 </style>
