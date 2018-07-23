@@ -6,8 +6,6 @@ import router from './router'
 import axios from 'axios'
 import moment from 'moment'
 import lodash from 'lodash' // javascript函数库
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/css/reset.css' // 初始化样式
 import '@/assets/js/remStrategy.js' // 移动端适配方案
 import '@/assets/plugins/iconfont/iconfont.css'
@@ -18,7 +16,6 @@ Vue.config.productionTip = false
 Vue.prototype.$moment = moment
 Vue.prototype.$axios = axios
 Vue.prototype.$_ = lodash
-Vue.use(ElementUI)
 
 /* eslint-disable no-new */
 new Vue({

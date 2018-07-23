@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import login from '@/views/login'
 import home from '@/views/home'
+import login from '@/views/login'
 import theQuickWay from '@/components/public/theQuickWay'
 
 Vue.use(Router)
@@ -9,25 +9,26 @@ Vue.use(Router)
 let VueRouter = new Router({
   mode: 'history',
   routes: [
-    // 
-    {
-      path: '/',
-      component: theQuickWay,
-      redirect: 'home',
-      children: [
-        // 
-        {
-          path: '/home',
-          name: 'home',
-          component: home
-        }
-      ]
-    },
+    // 无快捷方式
     {
       path: '/login',
       name: 'login',
       component: login
     },
+    // 带有快捷方式的菜单
+    {
+      path: '/',
+      component: theQuickWay,
+      children: [
+        //
+        {
+          path: 'home',
+          name: 'home',
+          component: home
+        }
+      ]
+    },
+    // 错误重定向
     {
       path: '*',
       redirect: {
