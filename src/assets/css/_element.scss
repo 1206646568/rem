@@ -1,0 +1,17 @@
+@import './layout.scss';
+
+@mixin btn($size:14px,$color:#fff,$bgcolor:$primary,$padding:5px,$radius:5px){
+  display: inline-block;
+  padding: $padding;
+  text-align: center;
+  font-size: $size;
+  line-height: 1;
+  background-color: $bgcolor;
+  border: 1px solid $bgcolor;
+  border-radius: $radius;
+  color: $color;
+}
+
+@mixin list($direction:column){
+  @include flex($direction)
+}
