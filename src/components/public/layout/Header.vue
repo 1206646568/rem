@@ -32,8 +32,8 @@ export default {
 
     }
   },
-  methods:{
-    historyGo(val){
+  methods: {
+    historyGo (val) {
       this.$router.go(val)
     }
   }
@@ -55,7 +55,7 @@ export default {
 }
 .quick {
   position: absolute;
-  left:0;
+  left: 0;
   width: 60px;
   font-size: 20px;
 }

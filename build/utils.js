@@ -69,9 +69,9 @@ exports.cssLoaders = function (options) {
       indentedSyntax: true
     }),
     scss: generateLoaders('sass').concat({
-      loader:'sass-resources-loader',
-      options:{
-        resources:path.resolve(__dirname,'../src/assets/css/base.scss')
+      loader: 'sass-resources-loader',
+      options: {
+        resources: path.resolve(__dirname, '../src/assets/css/base.scss')
       }
     }),
     stylus: generateLoaders('stylus'),
