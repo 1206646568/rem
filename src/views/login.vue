@@ -17,7 +17,7 @@
             <span>忘记密码?</span>
           </li>
         </ul>
-        <btn class="small">登陆</btn>
+        <btn class="blockBtn">登陆</btn>
       </div>
     </div>
   </div>
@@ -40,8 +40,13 @@ export default {
   height: 100%;
   background: url("../assets/image/login2.png") no-repeat;
   background-size: cover;
+  overflow-x: scroll;
 }
 .login {
+  // height: 100%;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
   .blgoIcon {
     font-size: 20px;
     text-align: center;
@@ -59,7 +64,7 @@ export default {
       line-height: 35px;
       label {
         padding: 0 10px;
-        width: 60px;
+        width: 70px;
         color: #fff;
         background-color: $primaryDeep;
         background-color: rgba(13, 107, 177, 0.9);
@@ -79,19 +84,19 @@ export default {
         color: #606266;
         outline: none;
         padding: 0 10px;
-        transition: border-color 0.5, box-shadow 0.5s;
+        // transition: border-color 0.5, box-shadow 0.5s;
       }
       input:focus {
-        border-color: $primaryDeep;
+        // border-color: $primaryDeep;
         // box-shadow: $primaryDeep 1px 1px 1px;
-        box-shadow: $primaryDeep 0px 0px 1px 0px;
+        // box-shadow: $primaryDeep 0px 0px 1px 0px;
       }
     }
     .forget {
       color: #757575;
       justify-content: flex-end;
     }
-    .small {
+    .blockBtn {
       height: 25px;
       line-height: 25px;
     }

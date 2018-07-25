@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import home from '@/views/home'
 import login from '@/views/login'
-import theQuickWay from '@/components/public/theQuickWay'
+import theQuickWay from '@/components/public/template/theQuickWay'
 
 Vue.use(Router)
 
@@ -19,6 +19,9 @@ let VueRouter = new Router({
     {
       path: '/',
       component: theQuickWay,
+      redirect: {
+        name: 'home'
+      },
       children: [
         //
         {
