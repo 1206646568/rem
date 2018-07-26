@@ -28,7 +28,6 @@
   </div>
 </template>
 <style lang="scss" scoped>
-@import "@/assets/css/_benchmark.scss";
 $initBgColor: #4a8bce;
 $initColor: #4e4b4b;
 .flexbox {
@@ -37,29 +36,29 @@ $initColor: #4e4b4b;
   display: flex;
   // flex-direction: row | row-reverse | column | column-reverse; 默认(水平方向)、水平方向（右起点）、垂直方向（上起点）、垂直方向（下起点）
   flex-direction: column;
-  font-size: px2rem(16px);
+  font-size: 16px;
 }
 .header {
   position: relative;
-  height: px2rem(60px);
-  line-height: px2rem(60px);
+  height: 60px;
+  line-height: 60px;
   text-align: center;
   background: $initBgColor;
-  font-size: px2rem(20px);
+  font-size: 20px;
   color: #fff;
   .all {
     position: absolute;
-    width: px2rem(60px);
+    width: 60px;
     display: block;
     i {
-      font-size: px2rem(16px);
+      font-size: 16px;
     }
   }
 }
 .main {
-  display: flex;
+  // display: flex;
   flex: 1;
-  flex-direction: column;
+  // flex-direction: column;
   overflow-y: scroll;
 }
 // main::-webkit-scrollbar {
@@ -72,8 +71,8 @@ $initColor: #4e4b4b;
   text-align: center;
   background: $initBgColor;
   color: #fff;
-  height: px2rem(60px);
-  // line-height: px2rem(60px);
+  height: 60px;
+  // line-height: 60px;
   & > a {
     display: flex;
     justify-content: center;
@@ -81,11 +80,11 @@ $initColor: #4e4b4b;
     flex-direction: column;
     flex: 1px;
     i {
-      font-size: px2rem(20px);
+      font-size: 20px;
     }
     span {
-      margin-top: px2rem(3px);
-      font-size: px2rem(12px);
+      margin-top: 3px;
+      font-size: 12px;
     }
   }
 }

@@ -20,9 +20,11 @@ export default {
 .quick {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
   .content {
     flex: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
   .navbar {
     height: 60px;
