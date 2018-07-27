@@ -33,33 +33,48 @@ let VueRouter = new Router({
       path: '/',
       component: theQuickWay,
       redirect: {
-        name: 'home'
+        name: 'hot'
       },
       children: [
         //
-        {
-          path: '/home',
-          name: 'home',
-          component: home
-        },
+        // {
+        //   path: '/home',
+        //   name: 'home',
+        //   meta: {
+        //     title: '首页'
+        //   },
+        //   component: home
+        // },
         {
           path: '/hot',
           name: 'hot',
+          meta: {
+            title: '热门'
+          },
           component: hot
         },
         {
           path: '/list',
           name: 'list',
+          meta: {
+            title: '列表'
+          },
           component: list
         },
         {
           path: '/Recommend',
           name: 'Recommend',
+          meta: {
+            title: '分类'
+          },
           component: Recommend
         },
         {
           path: '/user',
           name: 'user',
+          meta: {
+            title: '用户'
+          },
           component: user
         }
       ]
@@ -68,13 +83,13 @@ let VueRouter = new Router({
     {
       path: '*',
       redirect: {
-        name: 'home'
+        name: 'hot'
       }
     }
   ]
 })
 VueRouter.beforeEach((to, from, next) => {
+  document.title = (to.meta && to.meta.title) || 'blgo';
   next()
 })
-
 export default VueRouter

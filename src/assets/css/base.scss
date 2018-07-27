@@ -1,11 +1,21 @@
 /**
   * 该文件可被全局访问
   * */
-html{ height: 100% }
+
+/** 全局色彩 */
+
 $primary:#409eff;
 $success:#67c23a;
 $info:#909399;
 $warning:#e6a23c;
 $danger:#f56c6c;
-
 $primaryDeep: #0d6bb1;
+$successDeep:#48a51a;
+$infoDeep:#66696e;
+$warningDeep:#d4922f;
+$dangerDeep:#e75858;
+/** 全局字体 */
+
+$f-small: 12px;
+$f-medium: 14px;
+$f-large: 18px;

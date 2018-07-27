@@ -1,6 +1,7 @@
 <template>
   <div class="home">
    <span>首页 </span>
+   <div style="height:500px;background:#CCC;margin-top:10px;width:100%;"></div>
   </div>
 </template>
 <script>

@@ -2,7 +2,9 @@
   <div id="app">
     <!--设置页面切换动画-->
     <transition name="bounce">
-      <router-view/>
+      <keep-alive>
+        <router-view/>
+      </keep-alive>
     </transition>
   </div>
 </template>
@@ -11,10 +13,6 @@
 export default {
   name: 'App',
   created () {
-    // console.log(this.$axios)
-    // console.log(this.$moment)
-    // console.log(this.$_)
-    // console.log(this.$_)
   }
 }
 </script>

@@ -1,6 +1,12 @@
 <template>
   <div class="home">
-   <span>推荐页面 </span>
+   <span>首页 </span>
+   <div style="height:200px;background:#CCC;margin-top:10px;width:100%;"></div>
+   <div style="height:200px;background:#CCC;margin-top:10px;width:100%;"></div>
+   <div style="height:200px;background:#CCC;margin-top:10px;width:100%;"></div>
+   <div style="height:200px;background:#CCC;margin-top:10px;width:100%;"></div>
+   <div style="height:200px;background:#CCC;margin-top:10px;width:100%;"></div>
+   <div style="height:200px;background:#CCC;margin-top:10px;width:100%;"></div>
   </div>
 </template>
 <script>

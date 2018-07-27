@@ -42,8 +42,8 @@ export default {
 <style lang="scss" scoped>
 .header {
   font-size: 19px;
-  height: 60px;
-  line-height: 60px;
+  height: 50px;
+  line-height: 50px;
   color: #fff;
   background: linear-gradient(to right, $primary, $primaryDeep);
   text-align: center;
@@ -56,7 +56,7 @@ export default {
 .quick {
   position: absolute;
   left: 0;
-  width: 60px;
+  width: 50px;
   font-size: 20px;
 }
 </style>

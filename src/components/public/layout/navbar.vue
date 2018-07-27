@@ -1,21 +1,21 @@
 <template>
   <div class="navbar">
-      <span @click="routeGo('hot')">
+      <router-link tag="span" :to="{name:'hot'}">
         <i class="iconfont icon-hot"></i>
         <span>热门</span>
-      </span>
-      <span @click="routeGo('list')">
+      </router-link>
+      <router-link tag="span" :to="{name:'list'}">
         <i class="iconfont icon-form"></i>
         <span>文章</span>
-      </span>
-      <span @click="routeGo('Recommend')">
+      </router-link>
+      <router-link tag="span" :to="{name:'Recommend'}">
         <i class="iconfont icon-category"></i>
         <span>分类</span>
-      </span>
-      <span @click="routeGo('user')">
+      </router-link>
+      <router-link tag="span" :to="{name:'user'}">
         <i class="iconfont icon-account"></i>
         <span>用户</span>
-      </span>
+      </router-link>
   </div>
 </template>
 <script>
