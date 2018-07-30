@@ -2,7 +2,7 @@
   <div id="app">
     <!--设置页面切换动画-->
     <transition name="bounce">
-      <keep-alive>
+      <keep-alive><!--这个应该是没有生效，需要调整-->
         <router-view/>
       </keep-alive>
     </transition>
