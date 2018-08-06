@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  // js创建对象的方式 大体分为三类 字面量，object构造器【new Object()】 ,构造函数。由这三类衍生出很多的创建对象的方式
+  // 字面量创建
+  let obj0 = {
+    a: 1
+  };
+  // 创建一个Object对象
+  let obj1 = new Object();
+  obj1.a = 1;
+  // 工厂模式,优点：大量创建相同的相同的对象，缺点：无法进行对象识别
+  function createObj(name) {
+    var obj = new Object();
+    obj.name = name;
+    obj.showName = function () {
+      alert(this.name);
+    }
+    return obj;
+  }
+  var p1 = createObj('小米');
+  console.log('*******使用工厂模式***********')
+  console.log(p1 instanceof Object) // 判断类型
+  console.log('*******使用工厂模式***********')
+  /** 构造函数创建对象
+      创建的对象将会被添加在this指向的位置
+      缺点：封装性差，缺点是每次实例化一个对象,都会把属性和方法复制一遍
+      优点：可判断对象类型，优点就是能够通过instanceof识别对象
+  */
+  function createObj2(name) {
+    this.name = name;
+    this.showName = function () {
+      console.log(this.name);
+    }
+  }
+  var p2 = new createObj2('苹果');
+  console.log('*******使用构造函数***********')
+  console.log(p2.constructor == createObj2)
+  console.log(p2 instanceof createObj2) // 判断一个实例是否是他的父类
+  console.log(p2 instanceof Object) // 判断类型
+  console.log(p2 instanceof Function) // 判断类型
+  console.log('*******使用构造函数***********')
+  // 原型（prototype）模式，原型模式解决了方法或者属性不能共有的问题
+  // * 字面量也有原型，是Object.prototype,由于每个对象都有他的原型，而原型又有他的原型，所以便形成了原型链，原型链的顶部是null
+  // * 对象属性与原型重复时，对象属性将覆盖原型属性，xx.hasOwnProperty('xxkey') // xxkey存在对象属性(xx)中返回true 
+  // * in操作符不管是存在实例还是存在原型中都会返回true alert("xxkey" in xx) // true // for in 会遍历原型对象
+  // * Object.key(xx) // 该方法返回一个带有key值的数组，不会遍历原型对象上的值
+  function createObj3(name, age) {
+    this.name = name
+    this.age = age
+  }
+  var p3 = new createObj3('jack', 18)
+  createObj3.prototype.height = 20 // 创建可共享的访问的对象，仅构造函数创建的对象可以设置
+  createObj3.prototype.sex = '男'
+  console.log('*******构造函数+原型模式***********')
+  console.log(p3)
+  console.log(p3.sex) // 直接访问共享对象 在fixfox,chrome 对象的隐式属性  __proto__ 中可见
+  // 简单的原型语法，使用ES5 defineProperty() 重设constructor 为不可枚举属性
+  createObj3.prototype = {
+    height2: 180,
+    sex: '女'
+  }
+  // 重设后会使得原型对象与之前生成的对象不会有关联
+  Object.defineProperty(createObj3.prototype, "constructor", {
+    value: createObj3,
+    enumerable: false, // 设置不可枚举
+  })
+  var p4 = new createObj3('roes', 19)
+  console.log(p4)
+  // 原生对象的原型  (例：String.prototype) // 可以添加和定义新方法  
+  console.log('*******构造函数+原型模式***********')
+
+</script>
+<script>
+  // 面向对象，（继承，封装，多态），函数重载。
+
+  // new 的本质
+  // 1.创建一个新的对对象
+  // 2.将构造函数的作用域赋值给新的对象，因此this就指向了这个对象
+  // 3.执行构造函数中的代码，给新对象添加属性
+  // 4.返回新对象
+
+  // 继承的实现方式一 ，给该构造函数换一个新的原型,通过原型实现的继承后，不可以在使用字面量创建原型方法（因为原型链会被重写）
+  // 当时用引用类型的值，所有实例都会共享该引用类型的值
+  function SuperType() {
+    this.property = true;
+  }
+  SuperType.prototype.getSuperValue = function () {
+    return this.property;
+  }
+
+  function SubType() {
+    this.subproperty = false;
+  }
+
+  //继承了SuperType
+  SubType.prototype = new SuperType();
+
+  // 借用构造函数实现继承，可以解决引用类型问题,但是无法继承继承类的原型
+  console.log('********构造函数实现继承,修改超类（父类）的引用类型值不会同步********')
+
+  function Personner() {
+    this.height = [165, 175, 185, 200]
+  }
+  Personner.prototype.age = 18
+
+  function Person() {
+    Personner.apply(this)
+    // Personner.apply(this,[''])  // 可以写入两个参数,参数以数组形式传递
+    // Personner.call(this,'','')  // 可以写入多个参数
+  }
+  let people = new Person()
+  people.height.push('177')
+  console.log(people)
+  let people2 = new Person()
+  console.log(people2)
+  console.log('********构造函数实现继承********')
+
+  console.log('********组合继承********')
+
+  function SetValue() {
+    this.name = "red"
+    this.color = ["red", "green", "yellow"]
+  }
+  SetValue.prototype.sayName = function () {
+    alert(this.name)
+  }
+
+  function SetType() {
+    setValue.apply(this)
+    this.type = 20
+  }
+  SetType.prototype = new SetValue()
+  SetType.prototype.constructor = SetType
+  console.log(SetType.prototype)
+  console.log('********组合继承********')
+
+</script>
+
+</html>
